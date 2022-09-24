@@ -10,18 +10,53 @@ body{
     background-size: cover;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 #title{
+    display: flex;
     font-family: title-font,Arial, Helvetica, sans-serif;
+    font-size: 70px;
     color: greenyellow;
+    justify-content: center;
+    margin: 0px;
+    align-items: center;
+    cursor: alias;
 }
 #content{
     display: grid;
     margin: 0;
     min-height: 100vh;
-    grid-template-rows: 10% 85% 5%;
+    grid-template-rows: 15% 80% 5%;
 }
 #top{
     display: grid;
     grid-template-rows: 60% 40%;
+}
+#nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navPat{
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navElm{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: title-font,Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+.navElm:hover{
+    background-color: rgb(223, 65, 255);
+    cursor: pointer;
 }
