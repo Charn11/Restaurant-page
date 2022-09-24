@@ -1,10 +1,10 @@
-export { pageLoad };
+export { pageLoad, content}
+import { home } from './home.js'
 
-
+let content = document.createElement('div');
 //create initial html template
 let pageLoad = () => {
     let header = document.createElement('div');
-    let content = document.createElement('div');
     let footer = document.createElement('div');
     header.setAttribute('id','top');
     content.setAttribute('id','main');
@@ -17,7 +17,7 @@ let pageLoad = () => {
     //title
     let title = document.createElement('h1');
     title.setAttribute('id','title');
-    title.innerText="ASTROURANT"
+    title.innerText="ASTROBAR"
     header.appendChild(title);
 
     //nav bar
@@ -36,15 +36,23 @@ let pageLoad = () => {
         if(i==0)
         {
             navElm[i].innerText="Home";
+            navElm[i].style.backgroundColor="greenyellow";
+            navElm[i].style.color="deepskyblue";
         }
         else if(i==1)
         {
             navElm[i].innerText="Menu";
         }
         else{
-            navElm[i].innerText="About";
+            navElm[i].innerText="Contact";
         }
         navPat.appendChild(navElm[i]);
     }
     nav.appendChild(navPat);
+
+    //call home.js
+    home();
+
+    //footer
+    footer.innerText = "Copyright © 2022 Astrobar"
 }
