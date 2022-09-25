@@ -78,9 +78,9 @@ body{
 }
 #mainCont{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
-    border: 1px dashed skyblue;
     border-radius: 20px;
     margin: 10px 0;
 }
@@ -93,7 +93,7 @@ body{
     color: greenyellow;
     margin: 30px 0;
 }
-#home2{
+#home2,#home4,#delv{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -110,7 +110,7 @@ body{
     border-radius: 25px;
     border: 5px solid white;
 }
-#home3{
+#home3,#cont1{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -135,20 +135,13 @@ body{
 #h3c{
     font-size: 25px;
 }
-#home4{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    flex: 0 1 auto;
-    padding: 20px;
-    font-family: title-font,'Times New Roman', Times, serif;
+#menuImg{
+    object-fit: fill;
+    width: 800px;
+    height: 800px;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+#cont1{
     font-size: 25px;
-    text-align: justify;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: skyblue;
-    border-radius: 25px;
-    border: 5px solid white;
 }

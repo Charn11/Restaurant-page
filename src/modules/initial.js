@@ -1,10 +1,13 @@
-export { pageLoad, content}
+export { pageLoad, content, header, mainCont}
 import { home } from './home.js'
+import { menu } from './menu.js'
+import { contact } from './contact.js'
 
 let content = document.createElement('div');
+let header = document.createElement('div');
+let mainCont = document.createElement('div');
 //create initial html template
 let pageLoad = () => {
-    let header = document.createElement('div');
     let footer = document.createElement('div');
     header.setAttribute('id','top');
     content.setAttribute('id','main');
@@ -50,8 +53,52 @@ let pageLoad = () => {
     }
     nav.appendChild(navPat);
 
-    //call home.js
+    //initailaize grid
+    let empLeft = document.createElement('div');
+    content.appendChild(empLeft);
+    mainCont.setAttribute('id','mainCont');
+    content.appendChild(mainCont);
+    let empRgt = document.createElement('div');
+    content.appendChild(empRgt);
+
+    //call home.js for initial pageload
     home();
+
+    //listener for menu tab
+    navElm[1].addEventListener('click', e => {
+        navElm[1].style.backgroundColor="greenyellow";
+        navElm[1].style.color="deepskyblue";
+
+        navElm[0].style.backgroundColor="";
+        navElm[0].style.color="white";
+        navElm[2].style.backgroundColor="";
+        navElm[2].style.color="white";
+        menu();
+    })
+
+     //listener for home tab
+     navElm[0].addEventListener('click', e => {
+        navElm[0].style.backgroundColor="greenyellow";
+        navElm[0].style.color="deepskyblue";
+
+        navElm[1].style.backgroundColor="";
+        navElm[1].style.color="white";
+        navElm[2].style.backgroundColor="";
+        navElm[2].style.color="white";
+        home();
+    })
+
+    //listener for contact tab
+    navElm[2].addEventListener('click', e => {
+        navElm[2].style.backgroundColor="greenyellow";
+        navElm[2].style.color="deepskyblue";
+
+        navElm[1].style.backgroundColor="";
+        navElm[1].style.color="white";
+        navElm[0].style.backgroundColor="";
+        navElm[0].style.color="white";
+        contact();
+    })
 
     //footer
     footer.innerText = "Copyright © 2022 Astrobar"

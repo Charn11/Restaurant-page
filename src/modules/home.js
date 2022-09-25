@@ -1,17 +1,15 @@
-import { content } from './initial.js'
+import { content, mainCont } from './initial.js'
 export { home }
 
 //home page
 let home = () => {
 
-    //initailaize grid
-    let empLeft = document.createElement('div');
-    content.appendChild(empLeft);
-    let mainCont = document.createElement('div');
-    mainCont.setAttribute('id','mainCont');
-    content.appendChild(mainCont);
-    let empRgt = document.createElement('div');
-    content.appendChild(empRgt);
+    //remove child elements
+    let rem = document.getElementById('mainCont');
+    while(rem.firstChild)
+    {
+        rem.removeChild(rem.firstChild);
+    }
 
     //content box 1
     let home1 = document.createElement('div');
@@ -24,7 +22,7 @@ let home = () => {
     home2.setAttribute('id','home2');
     home2.innerText = "The best place to experience otherworldly delights. Started in 2022 with a humble restaurant based on earth we have now expanded across "
     +"3 planets and 5 moons "
-    +"From grilled alien tentacles to startdust sprinkled champagne it's all here."
+    +"Our space themed restaurant will literally make you go to space."
     +" Visit your nearest Astrobar now! We're also now delivering straight to your place.";
     mainCont.appendChild(home2);
 
